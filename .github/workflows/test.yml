@@ -9,5 +9,4 @@ jobs:
         environment: dev
         VAR_TEST: ${{ vars.VAR_TEST}}
     secrets:
-        TEST: ${{ secrets.GITHUB_TOKEN }}
-        NOMAD_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        TEST: ${{ secrets.TEST}}
