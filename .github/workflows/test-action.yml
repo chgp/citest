@@ -1,0 +1,28 @@
+name: test action
+
+env:
+  USE_REMOTE_CACHE: true
+  PUBLISH_IMAGE: false
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        description: 'Environment name, should be dev, qa, or prod'
+        type: string
+        required: true
+    secrets:
+      TEST:
+        required: true
+
+        
+
+jobs:
+  test:
+    runs-on: ubuntu
+    environment: ${{ inputs.environment }}
+
+    steps:
+
+      - name: echo test
+        run: echo bla ${{ secrets.TEST}}
