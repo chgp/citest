@@ -1,0 +1,14 @@
+on:
+  push:
+
+jobs:
+  call_test_action:
+    name: call test action
+    environment: dev 
+    uses: ./.github/workflows/test-action.yml
+    with:
+        environment: dev
+        VAR_TEST: ${{ vars.VAR_TEST}}
+    secrets:
+        TEST: ${{ secrets.GITHUB_TOKEN }}
+        NOMAD_TOKEN: ${{ secrets.GITHUB_TOKEN }}
