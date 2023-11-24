@@ -4,7 +4,6 @@ on:
 jobs:
   call_test_action:
     name: call test action
-    environment: dev 
     uses: ./.github/workflows/test-action.yml
     with:
         environment: dev

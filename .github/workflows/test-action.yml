@@ -11,6 +11,8 @@ on:
         description: 'Environment name, should be dev, qa, or prod'
         type: string
         required: true
+      VAR_TEST:
+        type: string
     secrets:
       TEST:
         required: true
@@ -24,5 +26,8 @@ jobs:
 
     steps:
 
-      - name: echo test
-        run: echo bla ${{ secrets.TEST}}
+      - name: echo hidden secret
+        run: echo secret ${{ secrets.TEST}}
+
+      - name: echo var
+        run: echo var ${{ vars.VAR_TEST }}
