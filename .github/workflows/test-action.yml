@@ -11,7 +11,7 @@ on:
         description: 'Environment name, should be dev, qa, or prod'
         type: string
         required: true
-      VAR_TEST:
+      VARTEST:
         type: string
     secrets:
       TEST:
@@ -30,4 +30,4 @@ jobs:
         run: echo secret ${{ secrets.TEST}}
 
       - name: echo var
-        run: echo var ${{ vars.VAR_TEST }}
+        run: echo var ${{ vars.VARTEST }}

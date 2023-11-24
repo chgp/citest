@@ -7,6 +7,6 @@ jobs:
     uses: ./.github/workflows/test-action.yml
     with:
         environment: dev
-        VAR_TEST: ${{ vars.VAR_TEST}}
+        VARTEST: ${{ vars.VARTEST}}
     secrets:
         TEST: ${{ secrets.TEST}}
