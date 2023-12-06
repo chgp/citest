@@ -37,27 +37,7 @@ on:
         default: '2'
         description: 'option 2'
         required: false
-  workflow_call:
-    inputs:
-      application:
-        type: string
-        description: 'Application'
-        required: true
-      environment:
-        type: string
-        description: 'Environment'
-        required: true
-        default: 'test'
-      option1:
-        type: string
-        description: 'option 1'
-        default: 'main'
-        required: true
-      option2:
-        type: string
-        description: 'option 2'
-        default: 'main'
-        required: true
+
 jobs:
   what_i_do:
     runs-on: ubuntu-latest
