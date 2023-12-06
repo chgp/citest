@@ -1,0 +1,69 @@
+name: Manual trigger
+
+run-name: Deploy ${{ inputs.application }}/${{ inputs.branch }} to ${{ inputs.environment }}-${{ inputs.region}}
+permissions:
+  contents: read
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        type: choice
+        description: 'Action'
+        required: true
+        default: 'CHOOSE THE ACTION'
+        options:
+          - 'CHOOSE THE ACTION'
+          - action1
+          - action2
+          - action3
+          - set schedule
+      application:
+        type: choice
+        description: 'Application'
+        required: true
+        default: 'CHOOSE THE APP'
+        options:
+          - 'CHOOSE THE APP'
+          - app1
+          - app2
+          - app3
+      option1:
+        type: string
+        default: '1'
+        description: 'option 1'
+        required: false
+      option2:
+        type: string
+        default: '2'
+        description: 'option 2'
+        required: false
+  workflow_call:
+    inputs:
+      application:
+        type: string
+        description: 'Application'
+        required: true
+      environment:
+        type: string
+        description: 'Environment'
+        required: true
+        default: 'test'
+      option1:
+        type: string
+        description: 'option 1'
+        default: 'main'
+        required: true
+      option2:
+        type: string
+        description: 'option 2'
+        default: 'main'
+        required: true
+jobs:
+  what_i_do:
+    runs-on: ubuntu-latest
+    # outputs:
+    steps:
+      - id: test
+        run: echo ${{ inputs.option2 }}
+
+    
