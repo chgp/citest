@@ -43,6 +43,8 @@ jobs:
     runs-on: ubuntu-latest
     # outputs:
     steps:
+      - uses: actions/checkout@v3
+
       - id: test
         run: echo ${{ inputs.option2 }}
       - id: debug_pwd
