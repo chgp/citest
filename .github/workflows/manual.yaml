@@ -45,9 +45,9 @@ jobs:
     steps:
       - id: test
         run: echo ${{ inputs.option2 }}
-      - id: debug
-        run: |
-          pwd
-          ls -l
+      - id: debug pdw
+        run: pwd
+      - id: debug ls
+        run: ls -l
 
     
