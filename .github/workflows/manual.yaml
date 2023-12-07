@@ -45,7 +45,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: message
-        run: echo "TEST=$(<test.txt)"
+        run: echo "TEST=$(<test.txt)" >> $GITHUB_ENV
       - id: test_env_var
         run: echo $TEST
       - id: test
