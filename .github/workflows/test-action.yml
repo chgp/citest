@@ -35,3 +35,9 @@ jobs:
 
       - name: echo var
         run: echo var ${{ vars.VARTEST }}
+
+      - name: Print Input Values
+        run: |
+          echo "send_maint_notification input is: ${{ github.event.inputs.bool1 }}"
+          echo "send_maint_notification input is: ${{ github.event.inputs.bool2 }}"
+
