@@ -50,8 +50,8 @@ jobs:
     # outputs:
     steps:
       - uses: actions/checkout@v3
-      - id: message
-        run: echo "TEST=$(<test.txt)" >> $GITHUB_ENV
+      # - id: message
+      #   run: echo "TEST=$(<test.txt)" >> $GITHUB_ENV
       - name: Print Input Values
         id: debug
         run: |
