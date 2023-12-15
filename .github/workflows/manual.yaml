@@ -37,6 +37,12 @@ on:
         default: '2'
         description: 'option 2'
         required: false
+      boolean1:
+        default: 'true'
+        required: true
+      boolean2:
+        default: true
+        required: true
 
 jobs:
   what_i_do:
@@ -46,6 +52,13 @@ jobs:
       - uses: actions/checkout@v3
       - id: message
         run: echo "TEST=$(<test.txt)" >> $GITHUB_ENV
+      - name: Print Input Values
+        id: debug
+        run: |
+          echo "send_maint_notification input is: ${{ github.event.inputs.boolean1 }}"
+          echo "send_maint_notification input is: ${{ github.event.inputs.boolean1 }}"
+
+
       - id: test_env_var
         run: echo $TEST
       - id: test
