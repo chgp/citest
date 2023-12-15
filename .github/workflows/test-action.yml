@@ -13,6 +13,10 @@ on:
         required: true
       VARTEST:
         type: string
+      bool1:
+        default: true
+      bool2:
+        default: true
     secrets:
       TEST:
         required: true
