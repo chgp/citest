@@ -5,7 +5,6 @@ env:
   PUBLISH_IMAGE: false
 
 on:
-  push
   workflow_call:
     inputs:
       environment:
